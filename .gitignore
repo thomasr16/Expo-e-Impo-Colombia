@@ -1,0 +1,32 @@
+# --- Entornos Virtuales ---
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+
+# --- Datos (Nunca subir datos reales o pesados) ---
+Data/Expo/
+Data/Impo/
+Data/datalake_expo/
+Data/datalake_impo/
+*.csv
+*.xlsx
+*.json
+*.parquet
+*.parquet.gzip
+*.zip
+
+# --- Archivos de Configuración Local ---
+.vscode/
+.env
+.DS_Store
+
+# --- Notebooks y Temporales ---
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# --- Modelos y Binarios ---
+*.pkl
+*.h5
+*.joblib
