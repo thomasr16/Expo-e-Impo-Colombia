@@ -36,6 +36,7 @@ def graficar_treemap_productos(df, path_cols, value_col, titulo):
         title=titulo, color=value_col, color_continuous_scale='Blugrn'
     )
     return fig
+
 def graficar_saldo_paises(df, top_n=20):
     """
     Muestra un gráfico de barras divergentes.
@@ -119,4 +120,90 @@ def graficar_variacion_pct(df, tipo_flujo="Exportación", top_n=10):
         yaxis_title="Sector",
         xaxis=dict(ticksuffix="%")
     )
+    return fig
+
+# Diccionario constante (puedes seguir agregando códigos aquí)
+MAPA_DIAN_ISO ={
+    "249": "USA", # Estados Unidos
+    "215": "CHN", # China
+    "493": "MEX", # México
+    "072": "BRA", # Brasil
+    "105": "DEU", # Alemania
+    "169": "COL", # Colombia (Reimportaciones)
+    "361": "IND", # India
+    "239": "ECU", # Ecuador
+    "275": "FRA", # Francia
+    "399": "JPN", # Japón
+    "063": "ARG", # Argentina
+    "410": "KOR", # Corea del Sur
+    "385": "ITA", # Italia
+    "245": "ESP", # España
+    "589": "PER", # Perú
+    "149": "CAN", # Canadá
+    "521": "NLD", # Países Bajos (Holanda)
+    "827": "TUR", # Turquía
+    "850": "VEN", # Venezuela
+    "196": "CRI", # Costa Rica
+    "152": "CHL", # Chile
+    "767": "CHE", # Suiza
+    "809": "SWE", # Suecia
+    "628": "GBR", # Reino Unido
+    "069": "AUS", # Australia
+    "607": "PRT", # Portugal
+    "059": "BEL", # Bélgica
+    "880": "VNM", # Vietnam
+    "379": "IDN", # Indonesia
+    "744": "SGP", # Singapur
+    "764": "THA", # Tailandia
+    "450": "MYS", # Malasia
+    "603": "POL", # Polonia
+    "687": "RUS", # Rusia
+    "813": "TWN", # Taiwán
+    "375": "HKG", # Hong Kong
+    "240": "EGY", # Egipto
+    "576": "PAK", # Pakistán
+    "244": "ARE", # Emiratos Árabes Unidos
+    "391": "ISR", # Israel
+    "053": "SAU",  # Arabia Saudita
+    "211": "AUT",   # Austria
+    "386": "DNK",  # Dinamarca
+    "428": "NOR",  # Noruega
+    "498": "FIN",  # Finlandia
+    "855": "IRL",  # Irlanda
+    "023": "ALB",  # Albania
+    "218": "TZA",  # Tanzania
+    "156": "UGA",  # Uganda
+    "190": "KAZ",  # Kazajistán
+    "840": "QAT",  # Qatar
+}
+
+def generar_mapa(df, col_pais, col_valor, titulo):
+    """
+    Genera un mapa coroplético utilizando un DataFrame de Pandas.
+    """
+    # 1. Asegurar que los códigos sean string y mapear a ISO Alpha-3
+    df = df.copy()
+    df[col_pais] = df[col_pais].astype(str)
+    df['ISO_CODE'] = df[col_pais].map(MAPA_DIAN_ISO)
+
+    # 2. Agrupar por el código ISO para consolidar valores por país
+    df_agrupado = df.groupby('ISO_CODE').agg({col_valor: 'sum'}).reset_index()
+
+    # 3. Crear el gráfico
+    fig = px.choropleth(
+        df_agrupado,
+        locations="ISO_CODE",
+        color=col_valor,
+        color_continuous_scale=px.colors.sequential.Plasma,
+        title=titulo,
+        labels={col_valor: "Valor Total", "ISO_CODE": "País (ISO)"},
+        projection="natural earth"
+    )
+
+    # Configuración de diseño
+    fig.update_layout(
+        margin={"r":0, "t":50, "l":0, "b":0},
+        coloraxis_colorbar=dict(title="USD")
+    )
+    
     return fig
