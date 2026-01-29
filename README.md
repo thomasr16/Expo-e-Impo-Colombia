@@ -26,4 +26,12 @@ Este proyecto analiza un conjunto de datos masivo de **más de 23 millones de re
 ├── src/
 │   ├── etl.py        # Limpieza y transformación
 │   └── utils.py      # Funciones de apoyo
-└── requirements.txt
+└── requirements.txt 
+```
+## Analisis de negocio 
+En este proyecto encontramos informacion interesante al rededor del comportamiento de la economia Colombia. \
+Entre algunas conclusiones importantes vemos la siguiente grafica:
+### 📊 Análisis de Importaciones
+[![Ver Gráfico Interactivo](.../Reportes/Imagenes/balanza_comercial.png)]
+*Haz clic en la imagen para abrir la versión interactiva.*
+
