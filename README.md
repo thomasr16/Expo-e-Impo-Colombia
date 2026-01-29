@@ -32,6 +32,5 @@ Este proyecto analiza un conjunto de datos masivo de **más de 23 millones de re
 En este proyecto encontramos informacion interesante al rededor del comportamiento de la economia Colombia. \
 Entre algunas conclusiones importantes vemos la siguiente grafica:
 ### 📊 Análisis de Importaciones
-[![Ver Gráfico Interactivo](.../Reportes/Imagenes/balanza_comercial.png)]
-*Haz clic en la imagen para abrir la versión interactiva.*
-
+![Ver Gráfico Interactivo](/Reportes/Imagenes/balanza_comercial.png)
+Como notamos, Colombia en general tiene deficit con respecto a lo que compra y lo que vende. 
