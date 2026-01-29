@@ -31,6 +31,9 @@ Este proyecto analiza un conjunto de datos masivo de **más de 23 millones de re
 ## Analisis de negocio 
 En este proyecto encontramos informacion interesante al rededor del comportamiento de la economia Colombia. \
 Entre algunas conclusiones importantes vemos la siguiente grafica:
-### 📊 Análisis de Importaciones
-![Ver Gráfico Interactivo](/Reportes/Imagenes/balanza_comercial.png)
+### 📊 Análisis de Importaciones y Exportaciones
+![Ver Gráfico Interactivo](/Reportes/Imagenes/balanza_comercial.png) \
 Como notamos, Colombia en general tiene deficit con respecto a lo que compra y lo que vende. 
+## Analisis de paises origen
+Otro aspecto importante que encontramos es que en su mayoria hemos traido mercancia de las dos potencias mundiales mas influyentes como los son China y Estados Unidos. 
+![Ver Gráfico Interactivo](/Reportes/Imagenes/mapa_origen_importaciones.png) 
