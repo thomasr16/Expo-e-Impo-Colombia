@@ -21,11 +21,11 @@ Este proyecto analiza un conjunto de datos masivo de **más de 23 millones de re
 │   ├── raw/          # Datos originales (.zip)
 │   └── processed/    # Datos optimizados en Parquet
 ├── notebooks/
-│   ├── Ejecucion_etl.ipynb  # Análisis exploratorio
-│   └── analisis_negocio.ipynb  # Visualizaciones finales
+│   ├── Ejecucion_etl.ipynb  # creacion datalakes
+│   └── analisis_negocio.ipynb  # Anlaisis negocio finales
 ├── src/
-│   ├── etl.py        # Limpieza y transformación
-│   └── utils.py      # Funciones de apoyo
+│   ├── etl_tools.py        # Limpieza y transformación
+│   └── viz_tools.py      # Funciones vizualizacion
 └── requirements.txt 
 ```
 ## Analisis de negocio 
@@ -36,4 +36,7 @@ Entre algunas conclusiones importantes vemos la siguiente grafica:
 Como notamos, Colombia en general tiene deficit con respecto a lo que compra y lo que vende. 
 ## Analisis de paises origen
 Otro aspecto importante que encontramos es que en su mayoria hemos traido mercancia de las dos potencias mundiales mas influyentes como los son China y Estados Unidos. 
-![Ver Gráfico Interactivo](/Reportes/Imagenes/mapa_origen_importaciones.png) 
+![Ver Gráfico Interactivo](/Reportes/Imagenes/mapa_origen_importaciones.png)  
+
+Tambien algo importante que notamos es que en general estamos en deficit, sin embargo esto se refiere a las importaciones totales, pero existen algunos paises con los que tenemos cierto margen de ganancia. Estos paises se pueden ver en la siguiente grafica \
+![Ver Gráfico Interactivo](/Reportes/Imagenes/saldo_paises.png)
