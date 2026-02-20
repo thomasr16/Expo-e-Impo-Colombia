@@ -27,13 +27,13 @@ def graficar_balanza_comercial(df_agrupado):
     )
     return fig
 
-def graficar_treemap_productos(df, path_cols, value_col, titulo):
+def graficar_treemap_productos(df, cat_cols, value_col, titulo):
     """
-    Mapa de árbol para ver jerarquía de productos (Capítulos -> Partidas).
+    Mapa de árbol para ver jerarquía de productos vendidos.
     """
     fig = px.treemap(
-        df, path=path_cols, values=value_col,
-        title=titulo, color=value_col, color_continuous_scale='Blugrn'
+        df, path=cat_cols, values=value_col,
+        title=titulo, color=value_col, color_continuous_scale='Viridis'
     )
     return fig
 

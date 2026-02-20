@@ -18,14 +18,14 @@ Este proyecto analiza un conjunto de datos masivo de **más de 23 millones de re
 ## 📂 Estructura del Proyecto
 ```text
 ├── data/
-│   ├── raw/          # Datos originales (.zip)
-│   └── processed/    # Datos optimizados en Parquet
+│   ├── raw/          #Datos originales (.zip)
+│   └── processed/    #Datos optimizados en Parquet
 ├── notebooks/
-│   ├── Ejecucion_etl.ipynb  # creacion datalakes
-│   └── analisis_negocio.ipynb  # Anlaisis negocio finales
+│   ├── Ejecucion_etl.ipynb  #Creacion datalakes
+│   └── analisis_negocio.ipynb  #Analisis negocio finales
 ├── src/
-│   ├── etl_tools.py        # Limpieza y transformación
-│   └── viz_tools.py      # Funciones vizualizacion
+│   ├── etl_tools.py        #Limpieza y transformación
+│   └── viz_tools.py      #Funciones vizualizacion
 └── requirements.txt 
 ```
 ## Analisis de negocio 
